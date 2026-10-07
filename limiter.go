@@ -133,6 +133,7 @@ func fillDecision(d *Decision, r *Rule, rem, retry int) {
 	d.Limit = r.Limit
 	d.WindowSeconds = r.WindowSeconds
 	d.Algorithm = r.Algorithm
+	d.DistributionMode = r.DistributionMode
 	d.Remaining = rem
 	d.RetryAfterSeconds = retry
 }

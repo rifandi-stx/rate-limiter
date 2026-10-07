@@ -18,7 +18,7 @@ func (c RequestContext) Field(name string) (string, bool) {
 	switch name {
 	case "userId":
 		return c.UserID, c.UserID != ""
-	case "merchantId":
+	case "merchantId", "orgId":
 		return c.MerchantID, c.MerchantID != ""
 	case "ip":
 		return c.IP, c.IP != ""
