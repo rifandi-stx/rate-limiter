@@ -1,0 +1,25 @@
+{
+  "rules": [
+    {
+      "name": "default-per-user",
+      "scope": "user",
+      "keyField": "userId",
+      "match": { "field": "userId", "exists": true },
+      "limit": 100,
+      "windowSeconds": 60,
+      "algorithm": "token_bucket",
+      "distributionMode": "LOCAL",
+      "params": { "burst": 150 }
+    },
+    {
+      "name": "anonymous-per-ip",
+      "scope": "ip",
+      "keyField": "ip",
+      "match": { "always": true },
+      "limit": 20,
+      "windowSeconds": 60,
+      "algorithm": "fixed_window",
+      "distributionMode": "LOCAL"
+    }
+  ]
+}
